@@ -6,6 +6,7 @@ Use this as a starter for AWS + Typescript projects.
 2. Change `project.name` to what you want the stack name to be and `bucket.name` to the name of an S3 bucket that already exists
 4. Ensure your AWS credentials are valid (`aws s3 ls` is a good command to make sure of this)
 5. Run `npm run deploy` to deploy your stack. This will compile the typescript and deploy your AWS resources all in one step.
+6. New lambda functions you add should go in `src/lambdas`. Where you put them beyond that is up to you. Do not give 2 lambda functions the same name or they will overwrite each other when deployed.
 
 ## Possible improvements
 1. Prettify support
