@@ -7,13 +7,10 @@ const OUT_DIR = path.resolve(__dirname, '../deploy/cloudformation/build');
 
 const lambdas = globSync(SRC_DIR + '/**/*.ts');
 
-console.log('lambdas are: ', lambdas);
-
 const config = {
   entry: lambdas.reduce((acc, lambda) => {
     const file = path.basename(lambda);
     const fileNoExtension = file.split('.')[0];
-    console.log('fileNoExtension is: ', fileNoExtension);
     acc[fileNoExtension] = lambda;
     return acc;
   }, {}),
