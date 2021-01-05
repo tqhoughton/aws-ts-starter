@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: My Description
+Globals:
+  Function:
+    Runtime: nodejs12.x
+    Timeout: 5
+    Handler: index.handler
+Resources:
+  TestFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-Foo'
+      CodeUri: ./build/foo/
