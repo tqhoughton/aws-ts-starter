@@ -5,8 +5,9 @@ CUR_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 mkdir -p "${CUR_DIR}/cloudformation/build/"
 CF_DIR="${CUR_DIR}/cloudformation"
 # THIS BUCKET MUST ALREADY EXIST
-S3_DEPLOYMENT_BUCKET=aws-sam-deployment-bucket
-STACK_NAME=my-stack-name
+S3_DEPLOYMENT_BUCKET=`cat ${CUR_DIR}/../bucket.name`
+STACK_NAME=`cat ${CUR_DIR}/../project.name`
+echo $STACK_NAME
 echo 'compiling...'
 npm run tsc &&
 npm run build &&
