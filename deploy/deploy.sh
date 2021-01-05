@@ -4,6 +4,7 @@
 CUR_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 mkdir -p "${CUR_DIR}/cloudformation/build/"
 CF_DIR="${CUR_DIR}/cloudformation"
+# THIS BUCKET MUST ALREADY EXIST
 S3_DEPLOYMENT_BUCKET=aws-sam-deployment-bucket
 STACK_NAME=my-stack-name
 echo 'compiling...'

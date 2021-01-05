@@ -8,7 +8,9 @@
     "yaml": "ts-node ./deploy/yaml.ts",
     "build": "webpack --config deploy/webpack.config.js --mode none",
     "test": "npx jest",
-    "test:verbose": "ENABLE_LOGGING=1 npm run test"
+    "test:verbose": "ENABLE_LOGGING=1 npm run test",
+    "destroy": "aws cloudformation delete-stack --stack-name my-stack-name",
+    "list-buckets": "aws s3 ls"
   },
   "author": "Turner Houghton",
   "license": "ISC",
